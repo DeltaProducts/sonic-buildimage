@@ -20,9 +20,8 @@ iface lo {{ 'inet' if prefix | ipv4 else 'inet6' }} static
 {% block mgmt_interface %}
 # BMC interface
 auto usb0
-iface usb0 inet static
-  address 192.168.0.2
-  netmask 255.255.255.0
+iface usb0 inet6 auto
+
 # The management network interface
 auto eth0
 {% if MGMT_INTERFACE %}
